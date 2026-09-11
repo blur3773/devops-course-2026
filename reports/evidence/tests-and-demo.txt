@@ -1,0 +1,28 @@
+$ python3 --version
+Python 3.9.6
+
+$ python3 -m unittest discover -s tests -v
+test_corrupt_storage_is_not_overwritten (test_cli.CliTests) ... ok
+test_invalid_input_does_not_modify_file (test_cli.CliTests) ... ok
+test_task_lifecycle (test_cli.CliTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.418s
+
+OK
+
+$ python3 -m src.main --file /var/folders/1r/z52fjjd17hd80qq420x6tnw00000gn/T/tmp1ez_j12i/tasks.json list
+Задач пока нет
+
+$ python3 -m src.main --file /var/folders/1r/z52fjjd17hd80qq420x6tnw00000gn/T/tmp1ez_j12i/tasks.json add 'Подготовить отчёт по DevOps'
+Добавлена задача #1: Подготовить отчёт по DevOps
+
+$ python3 -m src.main --file /var/folders/1r/z52fjjd17hd80qq420x6tnw00000gn/T/tmp1ez_j12i/tasks.json list
+[ ] #1 Подготовить отчёт по DevOps
+
+$ python3 -m src.main --file /var/folders/1r/z52fjjd17hd80qq420x6tnw00000gn/T/tmp1ez_j12i/tasks.json done 1
+Завершена задача #1
+
+$ python3 -m src.main --file /var/folders/1r/z52fjjd17hd80qq420x6tnw00000gn/T/tmp1ez_j12i/tasks.json list
+[x] #1 Подготовить отчёт по DevOps
+
