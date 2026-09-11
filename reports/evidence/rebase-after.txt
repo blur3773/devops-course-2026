@@ -1,0 +1,2 @@
+a14f1cf docs: explain lightweight Git branches
+5f2dc5a docs: explain Git staging area

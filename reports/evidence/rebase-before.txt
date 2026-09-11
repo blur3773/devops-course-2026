@@ -1,0 +1,3 @@
+68f43d5 docs: explain safe rebase usage
+faf5486 docs: explain lightweight Git branches
+5f2dc5a docs: explain Git staging area
