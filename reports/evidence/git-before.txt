@@ -1,0 +1,34 @@
+$ git --version
+git version 2.50.1 (Apple Git-155)
+
+$ git config --get user.name
+Изосимов Максим Игоревич
+
+$ git config --get user.email
+232448489+blur3773@users.noreply.github.com
+
+$ git remote -v
+origin	git@github.com:blur3773/devops-course-2026.git (fetch)
+origin	git@github.com:blur3773/devops-course-2026.git (push)
+
+$ git branch -a
+  codex/project-infrastructure
+* feature/hobby-project
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/codex/project-infrastructure
+  remotes/origin/feature/hobby-project
+  remotes/origin/main
+
+$ git log --oneline --all --graph -10
+* 11f66cd feat: add hobby project description
+* e7b86ca feat: initialize DevOps coursework infrastructure (#6)
+| * a4b65bf docs: add task board and project navigation
+| * 2e1f4fa feat: initialize StudyTasks project infrastructure
+| * 3bed144 docs: add student profile and semester goals
+|/  
+* 63bc909 Initial commit
+
+$ ssh -o BatchMode=yes -o HostKeyAlias=github.com -o StrictHostKeyChecking=yes -p 443 -T git@ssh.github.com
+Hi blur3773! You've successfully authenticated, but GitHub does not provide shell access.
+
