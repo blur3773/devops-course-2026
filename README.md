@@ -26,3 +26,5 @@ python3 -m src.main list
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+# Multi-remote test
