@@ -1,0 +1,7 @@
+$ git log --oneline -6
+7777ab2 oops
+926717b add docs
+efdb34b fix typo in subtract
+0490756 add subtract
+bbb28cf wip
+d0edd25 start calculator

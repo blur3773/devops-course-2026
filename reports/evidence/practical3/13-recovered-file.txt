@@ -1,0 +1,5 @@
+$ git checkout -b temp/recovered-branch <hash-from-reflog>
+Switched to recovered commit 2c0266acb4a8f520a2cc9254ce7d3d62d1b88365
+
+$ cat important_data.md
+# This is important data

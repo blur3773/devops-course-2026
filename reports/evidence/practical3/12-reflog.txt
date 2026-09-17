@@ -1,0 +1,15 @@
+$ git reflog --oneline -12
+06bc1dc HEAD@{0}: checkout: moving from temp/lost-branch to main
+2c0266a HEAD@{1}: commit: feat: add very important data
+06bc1dc HEAD@{2}: checkout: moving from main to temp/lost-branch
+06bc1dc HEAD@{3}: cherry-pick: fix: critical bug in calculator
+bd518b5 HEAD@{4}: checkout: moving from hotfix/urgent-fix to main
+e085049 HEAD@{5}: commit: feat: add multiply and divide (experimental)
+9e8c03b HEAD@{6}: commit: fix: critical bug in calculator
+bd518b5 HEAD@{7}: checkout: moving from main to hotfix/urgent-fix
+bd518b5 HEAD@{8}: commit: chore: test multi-remote push
+6585a39 HEAD@{9}: merge feature/calculator: Fast-forward
+bcc8410 HEAD@{10}: checkout: moving from feature/calculator to main
+6585a39 HEAD@{11}: rebase (finish): returning to refs/heads/feature/calculator
+
+Потерянный коммит: 2c0266acb4a8f520a2cc9254ce7d3d62d1b88365

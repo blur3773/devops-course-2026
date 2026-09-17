@@ -1,0 +1,11 @@
+$ git log --oneline --graph --decorate a948e33 -8
+*   a948e33 merge: integrate feature A
+|\  
+| * bcc8410 docs: add details for feature A
+| * e6b8162 feat: add feature A description
+|/  
+* 2d11ee0 docs: hide internal branches in practical 2 evidence
+* 12ecfda docs: replace practical 2 VS Code evidence with Terminal
+* 538f4fe docs: replace practical 1 VS Code evidence with Terminal
+* bd0ae1f docs: add verified reports for practicals 1 and 2
+* 019622f docs: add IDE vs CLI notes

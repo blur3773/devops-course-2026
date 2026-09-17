@@ -1,0 +1,4 @@
+$ git log --oneline -3
+6585a39 docs: add calculator README
+1ba34cc feat: implement subtract function
+a6f51e6 feat: implement add function

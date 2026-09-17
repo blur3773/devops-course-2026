@@ -1,0 +1,24 @@
+$ git status --short --branch
+## main...origin/main
+?? reports/evidence/practical3/
+
+$ git log --oneline --graph --decorate -12
+* b09be2f (HEAD -> main, origin/main, origin/HEAD, mirror/main, mirror/HEAD) Revert "feat: add new feature (accidentally broken)"
+* 488ae9a feat: add new feature (accidentally broken)
+* 06bc1dc fix: critical bug in calculator
+* bd518b5 chore: test multi-remote push
+* 6585a39 docs: add calculator README
+* 1ba34cc feat: implement subtract function
+* a6f51e6 feat: implement add function
+* bcc8410 docs: add details for feature A
+* e6b8162 feat: add feature A description
+* 2d11ee0 docs: hide internal branches in practical 2 evidence
+* 12ecfda docs: replace practical 2 VS Code evidence with Terminal
+* 538f4fe docs: replace practical 1 VS Code evidence with Terminal
+
+$ git remote -v
+mirror	git@github.com:blur3773/devops-course-2026-mirror.git (fetch)
+mirror	git@github.com:blur3773/devops-course-2026-mirror.git (push)
+origin	git@github.com:blur3773/devops-course-2026.git (fetch)
+origin	git@github.com:blur3773/devops-course-2026.git (push)
+origin	git@github.com:blur3773/devops-course-2026-mirror.git (push)

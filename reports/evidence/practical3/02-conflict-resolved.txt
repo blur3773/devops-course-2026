@@ -1,0 +1,31 @@
+$ git status --short
+?? reports/evidence/practical3/
+
+$ cat README.md
+# DevOps Course 2026
+
+Учебный репозиторий для практических работ по курсу «Инструменты DevOps».
+
+## Студент
+
+ФИО: Изосимов Максим Игоревич
+
+Группа: ЭФБО-11-24
+
+## Описание
+
+Учебный проект для освоения инструментов DevOps.
+
+## Стек
+
+- Git / GitHub
+- Python
+- Docker (скоро)
+
+$ git log --oneline --graph -4
+*   e26a06c merge: resolve conflict in README.md
+|\  
+| * 059eba6 docs: update README with student info (variant 2)
+* | 3aab7eb docs: update README with student info (variant 1)
+|/  
+* 2d11ee0 docs: hide internal branches in practical 2 evidence

@@ -1,0 +1,37 @@
+$ git merge conflict/readme-update-2
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status --short
+UU README.md
+?? reports/evidence/practical3/
+
+$ cat README.md
+# DevOps Course 2026
+
+<<<<<<< HEAD
+Репозиторий для практических работ по курсу DevOps.
+
+## Студент
+
+ФИО: Изосимов Максим Игоревич
+
+Группа: ЭФБО-11-24
+
+## Описание
+
+Учебный проект для освоения инструментов DevOps.
+=======
+Учебный репозиторий курса «Инструменты DevOps».
+
+## Автор
+
+Изосимов Максим Игоревич, группа ЭФБО-11-24
+
+## Стек
+
+- Git / GitHub
+- Python
+- Docker (скоро)
+>>>>>>> conflict/readme-update-2

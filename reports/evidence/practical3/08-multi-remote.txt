@@ -1,0 +1,6 @@
+$ git remote -v
+mirror	git@github.com:blur3773/devops-course-2026-mirror.git (fetch)
+mirror	git@github.com:blur3773/devops-course-2026-mirror.git (push)
+origin	git@github.com:blur3773/devops-course-2026.git (fetch)
+origin	git@github.com:blur3773/devops-course-2026.git (push)
+origin	git@github.com:blur3773/devops-course-2026-mirror.git (push)

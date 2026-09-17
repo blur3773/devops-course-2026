@@ -1,0 +1,17 @@
+$ git log --oneline -3
+06bc1dc fix: critical bug in calculator
+bd518b5 chore: test multi-remote push
+6585a39 docs: add calculator README
+
+$ cat calculator.py
+# Calculator app
+def add(a, b):
+    return a + b
+# TODO: add more functions
+def subtract(a, b):
+    return a - b  # fixed
+
+IMPORTANT_FIX = True
+
+$ grep -E "def (multiply|divide)" calculator.py
+(экспериментальные функции отсутствуют)
