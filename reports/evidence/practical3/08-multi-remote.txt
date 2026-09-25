@@ -1,6 +1,12 @@
 $ git remote -v
-mirror	git@github.com:blur3773/devops-course-2026-mirror.git (fetch)
-mirror	git@github.com:blur3773/devops-course-2026-mirror.git (push)
+gitlab	git@gitlab.com:blur3773/devops-course-2026-mirror.git (fetch)
+gitlab	git@gitlab.com:blur3773/devops-course-2026-mirror.git (push)
 origin	git@github.com:blur3773/devops-course-2026.git (fetch)
 origin	git@github.com:blur3773/devops-course-2026.git (push)
-origin	git@github.com:blur3773/devops-course-2026-mirror.git (push)
+origin	git@gitlab.com:blur3773/devops-course-2026-mirror.git (push)
+
+$ ssh -T git@gitlab.com
+Welcome to GitLab, @blur3773!
+
+$ git ls-remote git@gitlab.com:blur3773/devops-course-2026-mirror.git refs/heads/main
+aa680e8100491a2a7e4f3b93b42a97ed4497f402	refs/heads/main
