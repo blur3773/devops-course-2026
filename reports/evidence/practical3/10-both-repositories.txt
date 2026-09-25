@@ -1,8 +1,0 @@
-$ gh api repos/blur3773/devops-course-2026/commits/main
-main repo: bd518b5  chore: test multi-remote push
-
-$ gh api repos/blur3773/devops-course-2026-mirror/commits/main
-mirror repo: bd518b5  chore: test multi-remote push
-
-https://github.com/blur3773/devops-course-2026
-https://github.com/blur3773/devops-course-2026-mirror
