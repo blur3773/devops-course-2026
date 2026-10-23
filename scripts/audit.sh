@@ -50,5 +50,26 @@ if writable=$(find /var/www/devops-site -perm -o+w -print) &&
     permissions_ok=yes
 fi
 check 'Нет записи для всех, ключ 600' yes "$permissions_ok"
+echo '[5] Контейнеризация'
+check 'Docker активен' active "$(systemctl is-active docker 2>/dev/null)"
+health=$(docker inspect -f '{{.State.Health.Status}}' app-db-1 2>/dev/null)
+check 'PostgreSQL healthy' healthy "$health"
+ports_ok=no
+if sockets=$(ss -H -tln); then
+    bad=$(awk '$4 ~ /:(5000|5432)$/ &&
+        $4 !~ /^127\.0\.0\.1:(5000|5432)$/ {print $4}' <<< "$sockets")
+    # Проверка Docker дополняет ss, если userland-proxy отключён.
+    app_bind=$(docker inspect -f \
+        '{{range (index .NetworkSettings.Ports "5000/tcp")}}{{.HostIp}}:{{.HostPort}} {{end}}' \
+        app-app-1 2>/dev/null)
+    db_bind=$(docker inspect -f \
+        '{{range (index .NetworkSettings.Ports "5432/tcp")}}{{.HostIp}}:{{.HostPort}} {{end}}' \
+        app-db-1 2>/dev/null)
+    if [[ -z "$bad" && "$app_bind" == '127.0.0.1:5000 ' && -z "$db_bind" ]]; then
+        ports_ok=yes
+    fi
+fi
+check 'Порты приложения и БД не открыты во внешнюю сеть' yes "$ports_ok"
+check '.env имеет права 600' 600 "$(stat -c '%a' "$HOME/app/.env" 2>/dev/null)"
 echo "Пройдено: $PASS, не пройдено: $FAIL"
 [[ $FAIL -eq 0 ]] && exit 0 || exit 1
