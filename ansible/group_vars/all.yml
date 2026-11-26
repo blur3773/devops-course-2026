@@ -1,0 +1,5 @@
+app_image: ghcr.io/blur3773/devops-ci-app
+app_tag: e86050e1210c203e2a953d0dff90f1f77a75aa97
+app_container_name: devops-ci-app
+app_host_port: 5000
+app_internal_port: 5000
