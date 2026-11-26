@@ -34,3 +34,11 @@ Docker Engine 29.9.2 и Compose v5.6.1 установлены из официа�
 Сервисы Compose: `app` и `db` (`postgres:16-alpine`). Оба соединены через изолированную сеть `app_backend`; встроенный DNS разрешает имя `db`. Данные PostgreSQL хранятся в именованном томе `app_db_data`. Приложение опубликовано исключительно на `127.0.0.1:5000`, PostgreSQL не опубликован. Проверка `pg_isready` обеспечивает запуск приложения после готовности БД. Для доступа извне Nginx на HTTPS 443 проксирует `/app/` в `http://127.0.0.1:5000/` (конфигурация `config/devops-site`); статический сайт `/` остаётся доступным. Порт 5001 публиковался на всех адресах только в учебном опыте обхода UFW и был сразу закрыт.
 
 Снимок `05-docker-compose` создан после проверки приложения и тома, до добавления Nginx-прокси. Для диагностики выполнить `docker compose ps`, `docker compose logs app db`, `sudo tail /var/log/nginx/devops-site.error.log`. Не применять `docker compose down -v` к данным, которые требуется сохранить.
+
+## 10. Ansible
+
+Control: macOS arm64. Managed VM: devops-ansible-lab, a linked clone of 01-clean-install, Ubuntu 24.04 arm64, Host-only 10.37.129.3. Previous VM remains suspended and preserved.
+
+Project: ansible/. Bootstrap inventory uses student with SSH key, prod uses devops with SSH key, both on port 22. Bootstrap: ansible-playbook -i inventory/bootstrap.ini site.yml --ask-become-pass. Repeat: ansible-playbook site.yml. Read-only audit: ansible-playbook verify.yml.
+
+Roles: base installs official Docker and dependencies; ssh configures user/key/sudo/UFW; nginx installs HTTP reverse proxy; app pulls reviewed GHCR SHA and manages container/health. Image: ghcr.io/blur3773/devops-ci-app, full SHA is recorded in ansible/group_vars/all.yml. App publication: 127.0.0.1:5000:5000; Nginx: 80/tcp; endpoint: /health. CI publishes amd64 and arm64 variants for the Apple Silicon VM. No image build on VM.
